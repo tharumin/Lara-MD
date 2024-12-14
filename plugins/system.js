@@ -28,7 +28,28 @@ _*⚙️ Lααɾα Ｓｙｓｔｅｍ  Ｉｎｆｏ ⚙️*_
 
 > ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ    
 `
-await conn.sendMessage(from, { text: status }, { quoted: mek })
+await conn.sendMessage(from, { text: status,
+                              contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
 }catch(e){
     console.log(e)
     reply(`${e}`)
@@ -51,7 +72,28 @@ try{
         const message = await conn.sendMessage(from, { text: '*pong...*' })
         const endTime = Date.now()
         const ping = endTime - startTime
-        await conn.sendMessage(from, { text: `*⚬Lααɾα-ᴍᴅ ꜱᴘᴇᴇᴅ : ${ping}ms*_` }, { quoted: mek })
+        await conn.sendMessage(from, { text: `*⚬Lααɾα-ᴍᴅ ꜱᴘᴇᴇᴅ : ${ping}ms*`,
+                                      contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
     } catch (e) {
         console.log(e)
         reply(`${e}`)
@@ -89,7 +131,28 @@ let cap = `
 
 > Lααɾα-ᴍᴅ
 `
-return await conn.sendMessage(from,{image: {url: `https://i.ibb.co/zQg9dzm/IMG-20241025-WA0018.jpg`},caption: cap},{quoted: mek})
+return await conn.sendMessage(from,{image: {url: `https://i.ibb.co/zQg9dzm/IMG-20241025-WA0018.jpg`},caption: cap,
+                                    contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
 }catch(e){
 console.log(e)
 reply(`${e}`)
