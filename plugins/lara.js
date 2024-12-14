@@ -966,14 +966,14 @@ https://m.youtube.com/channel/UC7473CyG_w74rHZl-uQA64g
 
 > Lααɾα-ᴍᴅ ✻
 `
-await conn.sendMessage(from,{audio: {url: `https://github.com/sadiyamin/alexa-database/raw/refs/heads/main/Media/alive.mp3`},mimetype: 'audio/mpeg',ptt: true,
+await conn.sendMessage(from,{audio: {url: `https://github.com/tharumin/Alexa_Voice/raw/refs/heads/main/test2.mp3`},mimetype: 'audio/mpeg',ptt: true,
         contextInfo: {
                 externalAdReply: {
                         title: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
                         body: 'Lααɾα-ᴍᴅ ✻',
                         mediaType: 1,
                         sourceUrl: "https://github.com/sadiyamin",
-                        thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/.jpg', // This should match the image URL provided above
+                        thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
                         renderLargerThumbnail: true,
                         showAdAttribution: true
                 }
@@ -996,7 +996,7 @@ await conn.sendMessage(from,{audio: {url: `https://github.com/sadiyamin/alexa-da
                     body: 'LARA MD',
                     mediaType: 1,
                     sourceUrl: "https://github.com/sadiyamin",
-                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/.jpg', // This should match the image URL provided above
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
                     renderLargerThumbnail: true,
                     showAdAttribution: true
                 }
