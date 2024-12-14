@@ -483,47 +483,236 @@ let menu9 = `
                     // Handle option 1 (Audio File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu1 }, {quoted: mek});
+            caption: menu1,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                 } else if (messageType === '2') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu2 }, {quoted: mek});
+            caption: menu2,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '3') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu3 }, {quoted: mek});
+            caption: menu3,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '4') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu4 }, {quoted: mek});
+            caption: menu4,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '5') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu5 }, {quoted: mek});
+            caption: menu5,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '6') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu6 }, {quoted: mek});
+            caption: menu6,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '7') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu7 }, {quoted: mek});
+            caption: menu7,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '8') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu8 }, {quoted: mek});
+            caption: menu8,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                   } else if (messageType === '9') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: menu9 }, {quoted: mek});
+            caption: menu9,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                     
                 }
             }
@@ -566,7 +755,7 @@ let online = `
 ❍*ᴏᴡɴᴇʀ :* ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ
 ┗━━━━━━━━━━━━━━
 
-*ʀᴇᴘʟʏ ʙᴇʟᴏᴡ ᴛʜᴇ ɴᴜᴍʙᴇʀ*
+*ʀᴇᴘʟʏ ʙᴇʟᴏᴡ ᴛʜᴇ ɴᴜᴍʙᴇʀ 🔢*
 
  *1*  ┃    *ᴍᴇɴᴜ*
  *2*  ┃    *ʟᴀʀᴀ-ᴍᴅ ɢɪᴛ ʀᴇᴘᴏ*
@@ -1001,7 +1190,7 @@ await conn.sendMessage(from,{audio: {url: `https://github.com/tharumin/Alexa_Voi
             }
         }, { quoted: mek });
 
-      const sentMsg = await conn.sendMessage(from,{image: {url: `https://i.ibb.co/GQ6JdpF/20241127-133421.jpg`},caption: online,
+      const sentMsg = await conn.sendMessage(from,{image: {url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`},caption: online,
         contextInfo: {
                 mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
                 groupMentions: [],
@@ -1042,13 +1231,55 @@ await conn.sendMessage(from,{audio: {url: `https://github.com/tharumin/Alexa_Voi
                     // Handle option 1 (Audio File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: list }, {quoted: mek});
+            caption: list,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                 }
                  else if (messageType === '2') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/GQ6JdpF/20241127-133421.jpg`}, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-            caption: repo }, {quoted: mek});
+            caption: repo,
+                        contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                     }
                     }});
 }catch(e){
