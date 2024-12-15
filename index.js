@@ -115,7 +115,7 @@ mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_READ_STATUS === "true"){
 await conn.readMessages([mek.key])
 const user = mek.key.participant
-await conn.sendMessage(user,{audio: {url: `https://github.com/tharumin/Alexa_Voice/raw/refs/heads/main/test2.mp3`},mimetype: 'audio/mpeg',ptt: true,
+await conn.sendMessage(user,{audio: {url: `https://github.com/sadiyamin/alexa-database/raw/refs/heads/main/Media/good_night.mp3`},mimetype: 'audio/mpeg',ptt: true,
         contextInfo: {
                 externalAdReply: {
                         title: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
