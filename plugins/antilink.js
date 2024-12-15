@@ -48,9 +48,7 @@ async (conn,mek, m, { from, body, isGroup, isAdmins, isBotAdmins, reply, sender 
 })
 
 const linkPatterns = [
-    /https?:\/\/(?:chat\.whatsapp\.com|wa\.me)\/\S+/gi,   // WhatsApp group or chat links
-    /^https?:\/\/(www\.)?whatsapp\.com\/channel\/([a-zA-Z0-9_-]+)$/, //channel link
-    /https?:\/\/(?:t\.me|telegram\.me)\/\S+/gi           // Telegram links
+    /https?:\/\/(?:chat\.whatsapp\.com|wa\.me)\/\S+/gi   // WhatsApp group or chat links
 ];
 
 cmd({
