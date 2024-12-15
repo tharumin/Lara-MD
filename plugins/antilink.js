@@ -16,7 +16,7 @@ async (conn,mek, m, { from, body, isGroup, isAdmins, isBotAdmins, reply, sender 
         const lowerCaseMessage = body.toLowerCase();
         const containsBadWord = badWords.some(word => lowerCaseMessage.includes(word));
         
-        if (containsBadWord & config.ANTI_BAD === 'true') {
+        if (config.ANTI_BAD === 'true') {
           await conn.sendMessage(from, { delete: mek.key }, { quoted: mek });
           await conn.sendMessage(from, { text: "*🚫 ⚠️BAD WORDS NOT ALLOWED⚠️ 🚫*" ,
           contextInfo: {
@@ -61,7 +61,7 @@ cmd({
 
         const containsLink = linkPatterns.some(pattern => pattern.test(body));
 
-        if (containsLink && config.ANTI_LINK === 'true') {
+        if (config.ANTI_LINK === 'true') {
             // Delete the message
             await conn.sendMessage(from, { delete: mek.key }, { quoted: mek });
 
