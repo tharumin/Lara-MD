@@ -101,9 +101,32 @@ let tek = `
 ⁠⁠⁠⁠╰──────────────
 > Ａｌｅｘａ-ＭＤ
 `
-   conn.sendMessage(ownerNumber + "@s.whatsapp.net", { audio: { url: `https://github.com/sadiyamin/alexa-database/raw/refs/heads/main/Media/alive.mp3` }, mimetype: 'audio/mpeg', ptt: true })
-   conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/zQg9dzm/IMG-20241025-WA0018.jpg` }, caption: up })
-   conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: tek })
+   conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/zQg9dzm/IMG-20241025-WA0018.jpg` }, caption: up,
+                                                      contextInfo: {
+                externalAdReply: {
+                        title: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                        body: 'Lααɾα-ᴍᴅ ✻',
+                        mediaType: 1,
+                        sourceUrl: "https://github.com/sadiyamin",
+                        thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                        renderLargerThumbnail: true,
+                        showAdAttribution: true
+                }
+            }
+        });
+   conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: tek,
+                                   contextInfo: {
+                externalAdReply: {
+                        title: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                        body: 'Lααɾα-ᴍᴅ ✻',
+                        mediaType: 1,
+                        sourceUrl: "https://github.com/sadiyamin",
+                        thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                        renderLargerThumbnail: true,
+                        showAdAttribution: true
+                }
+            }
+        });                   
     }
     })
     conn.ev.on('creds.update', saveCreds)  
@@ -115,7 +138,7 @@ mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_READ_STATUS === "true"){
 await conn.readMessages([mek.key])
 const user = mek.key.participant
-await conn.sendMessage(user,{audio: {url: `https://github.com/sadiyamin/alexa-database/raw/refs/heads/main/Media/good_morning.mp3`},mimetype: 'audio/mpeg',ptt: true,
+/*await conn.sendMessage(user,{audio: {url: `https://github.com/sadiyamin/alexa-database/raw/refs/heads/main/Media/good_morning.mp3`},mimetype: 'audio/mpeg',ptt: true,
         contextInfo: {
                 externalAdReply: {
                         title: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
@@ -127,7 +150,7 @@ await conn.sendMessage(user,{audio: {url: `https://github.com/sadiyamin/alexa-da
                         showAdAttribution: true
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: mek });*/
 }   
 
     const m = sms(conn, mek)
