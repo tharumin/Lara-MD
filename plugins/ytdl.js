@@ -177,16 +177,14 @@ const sentMsg = await conn.sendMessage(from, {
             if (isReplyToSentMsg) {
                 // React to the user's reply (the "1" or "2" message)
                 await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });         
-                let sadee = await gifted.giftedytmp3(url)
-                let downloadUrl = sadee.data.result.download_url;
-
+                const sadee = ytmp3(url);
                 // React to the upload (sending the file)
                 await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });  
 
                 if (messageType === '1') {
                     // Handle option 1 (Audio File)
                     await conn.sendMessage(from, { 
-                        audio: { url: downloadUrl }, 
+                        audio: { url: sadee.download.url }, 
                         mimetype: "audio/mpeg" ,
                         contextInfo: {
                 mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
@@ -213,7 +211,7 @@ const sentMsg = await conn.sendMessage(from, {
                 } else if (messageType === '2') {
                     // Handle option 2 (Document File)
                     await conn.sendMessage(from, {
-                        document: { url: downloadUrl},
+                        document: { url: sadee.download.url},
                         mimetype: "audio/mp3",
                         fileName: `${data.title}.mp3`, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
                         caption: info,
