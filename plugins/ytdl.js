@@ -1,6 +1,7 @@
 const { cmd, commands } = require('../command');
 const yts = require('yt-search');
 const { fetchJson } = require('../lib/functions')
+const gifted = require('gifted-dls');
 
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -176,8 +177,8 @@ const sentMsg = await conn.sendMessage(from, {
             if (isReplyToSentMsg) {
                 // React to the user's reply (the "1" or "2" message)
                 await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });         
-                const sadee =  await fetchJson(`https://api.giftedtech.my.id/api/download/ytaud?apikey=gifted&url=${url}`);
-                const downloadUrl = sadee.result.download_url;
+                let sadee = await gifted.giftedytmp3(url)
+                let downloadUrl = sadee.data.result.download_url;
 
                 // React to the upload (sending the file)
                 await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });  
@@ -631,19 +632,3 @@ cmd({
         }
     }
 )            
-
-/* 
-contextInfo: {
-                            externalAdReply: {
-                                title: data.title,
-                                body: data.videoId,
-                                mediaType: 1,
-                                sourceUrl: data.url,
-                                thumbnailUrl: data.thumbnail,
-                                renderLargerThumbnail: true,
-                                showAdAttribution: true
-                            }
-                        }
-                    
-                    }, { quoted: mek });
-  */
