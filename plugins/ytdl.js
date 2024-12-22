@@ -1,7 +1,7 @@
 const { cmd, commands } = require('../command');
 const yts = require('yt-search');
 const { fetchJson } = require('../lib/functions');
-cons { ytsearch, ytmp3 } = require('@dark-yasiya/yt-dl.js');
+const { ytsearch, ytmp3 } = require('@dark-yasiya/yt-dl.js');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
