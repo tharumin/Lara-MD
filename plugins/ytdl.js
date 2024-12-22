@@ -188,18 +188,26 @@ const sentMsg = await conn.sendMessage(from, {
                         audio: { url: downloadUrl }, 
                         mimetype: "audio/mpeg" ,
                         contextInfo: {
-                            externalAdReply: {
-                                title: data.title,
-                                body: data.videoId,
-                                mediaType: 1,
-                                sourceUrl: data.url,
-                                thumbnailUrl: data.thumbnail, // This should match the image URL provided above
-                                renderLargerThumbnail: true,
-                                showAdAttribution: true
-                            }
-                        }
-                    
-                    }, { quoted: mek });
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: data.url,
+                    thumbnailUrl: data.thumbnail, // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
                     await conn.sendMessage(from, { react: { text: '✅', key: mek.key } });
                 } else if (messageType === '2') {
                     // Handle option 2 (Document File)
@@ -623,3 +631,19 @@ cmd({
         }
     }
 )            
+
+/* 
+contextInfo: {
+                            externalAdReply: {
+                                title: data.title,
+                                body: data.videoId,
+                                mediaType: 1,
+                                sourceUrl: data.url,
+                                thumbnailUrl: data.thumbnail,
+                                renderLargerThumbnail: true,
+                                showAdAttribution: true
+                            }
+                        }
+                    
+                    }, { quoted: mek });
+  */
