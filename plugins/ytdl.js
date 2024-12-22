@@ -337,7 +337,7 @@ const messageID = sentMsg.key.id; // Save the message ID for later reference
                 // React to the user's reply (the "1" or "2" message)
                 await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });
 if (messageType === '1.1') {
-                    const down = await ytmp4(`${url}`,"360p")                     
+                    const down = await ytmp4(`${url}`,`360`)                     
                     const downloadUrl = down;
                     // React to the upload (sending the file)
                     await conn.sendMessage(from, { delete: sentMsg.key })
