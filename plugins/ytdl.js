@@ -103,16 +103,16 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const url = data.url;
 
         let desc = `
-◉┏━┫*⚬Lααɾα-ꜱᴏɴɢ⚬*┣━✾
+◉┏━┫ *⚬Lααɾα-ꜱᴏɴɢ⚬* ┣━✾
 ◉┃            *ᴸ  ͣ  ͣ  ͬ  ͣ  ✻  ᴸ  ͣ  ͣ  ͬ  ͣ*
 ┏┻━━━━━━━━━━━━━
-┃*Lααɾα-ᴍᴅ ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ✻*
+┃ *Lααɾα-ᴍᴅ ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ✻*
 ┗━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━
-❍*ᴛɪᴛʟᴇ :* ${data.title}
-❍*ᴅᴜʀᴀᴛɪᴏɴ :* ${data.timestamp}
-❍*ᴠɪᴇᴡꜱ :* ${data.views}
-❍*ᴜᴘʟᴏᴀᴅ ᴏɴ :* ${data.ago}
+❍ *ᴛɪᴛʟᴇ :* ${data.title}
+❍ *ᴅᴜʀᴀᴛɪᴏɴ :* ${data.timestamp}
+❍ *ᴠɪᴇᴡꜱ :* ${data.views}
+❍ *ᴜᴘʟᴏᴀᴅ ᴏɴ :* ${data.ago}
 ┗━━━━━━━━━━━━━━━
 ╭──┬┬┬┬┬┬┬┬┬┬┬──
 │        *ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀͨᴅͦᴇͩᴇͤꜱͬʜᴀ*
@@ -176,7 +176,7 @@ const sentMsg = await conn.sendMessage(from, {
             if (isReplyToSentMsg) {
                 // React to the user's reply (the "1" or "2" message)
                 await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });         
-                const sadee =  await fetchJson(`https://api.giftedtech.my.id/api/download/ytaud?apikey=gifted&url=${q}`);
+                const sadee =  await fetchJson(`https://api.giftedtech.my.id/api/download/ytaud?apikey=gifted&url=${url}`);
                 const downloadUrl = sadee.result.download_url;
 
                 // React to the upload (sending the file)
@@ -258,16 +258,16 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const url = data.url;
 
         let desc = `
-◉┏━┫*⚬Lααɾα-ᴠɪᴅᴇᴏ⚬*┣━✾
+◉┏━┫ *⚬Lααɾα-ᴠɪᴅᴇᴏ⚬* ┣━✾
 ◉┃            *ᴸ  ͣ  ͣ  ͬ  ͣ  ✻  ᴸ  ͣ  ͣ  ͬ  ͣ*
 ┏┻━━━━━━━━━━━━━
-┃*Lααɾα-ᴍᴅ ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅ ✻*
+┃ *Lααɾα-ᴍᴅ ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅ ✻*
 ┗━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━
-❍*ᴛɪᴛʟᴇ :* ${data.title}
-❍*ᴅᴜʀᴀᴛɪᴏɴ :* ${data.timestamp}
-❍*ᴠɪᴇᴡꜱ :* ${data.views}
-❍*ᴜᴘʟᴏᴀᴅ ᴏɴ :* ${data.ago}
+❍ *ᴛɪᴛʟᴇ :* ${data.title}
+❍ *ᴅᴜʀᴀᴛɪᴏɴ :* ${data.timestamp}
+❍ *ᴠɪᴇᴡꜱ :* ${data.views}
+❍ *ᴜᴘʟᴏᴀᴅ ᴏɴ :* ${data.ago}
 ┣━━━━━━━━━━━━━━━
 ┣━━┬┬┬┬┬┬┬┬┬┬┬━━
 ┃        *ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀͨᴅͦᴇͩᴇͤꜱͬʜᴀ*
