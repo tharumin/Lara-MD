@@ -20,7 +20,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
          headerType: 1,
        };
 
-       await sock.sendMessage(from, buttonMessage);
+       await conn.sendMessage(from, buttonMessage);
        console.log('Button message sent successfully');
      };
 const messageText = 'Hello! This is an interactive message with buttons.';
