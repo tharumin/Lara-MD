@@ -87,7 +87,7 @@ await conn.relayMessage(msg.key.remoteJid, msg.message, {
 })
 
 cmd({
-    pattern: "sadee",
+    pattern: "hukanawa",
     desc: "button test",
     react: "🎵",
     category: "download",
