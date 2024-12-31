@@ -158,28 +158,20 @@ mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_READ_STATUS === "true"){
 await conn.readMessages([mek.key])
 const user = mek.key.participant
-await conn.sendMessage(user,{audio: {url: `https://github.com/tharumin/Alexa_Voice/raw/refs/heads/main/status_vewies.mp3`},mimetype: 'audio/mpeg',
-                             contextInfo: {
-      mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
-      groupMentions: [],
-      forwardingScore: 1,
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363192254044294@newsletter',
-          newsletterName: "Lααɾα-ᴍᴅ ✻",
-          serverMessageId: 999
-      },
-      externalAdReply: {
-          title: 'LARA MD',
-          body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
-          mediaType: 1,
-          sourceUrl: "https://github.com/sadiyamin",
-          thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
-          renderLargerThumbnail: false,
-          showAdAttribution: true
-      }
-  }}, { quoted: mek }); 
-}
+const reactToStatus = async (jid, reaction) => {
+const reactionMessage = {
+         react: {
+           text: '😊', // Reaction emoji or text
+           key: {
+             remoteJid: jid,
+             fromMe: true,
+             id: user, // The ID of the status message
+           },
+         },
+       };
+
+       await sock.sendMessage(jid, reactionMessage);
+     };
 
     const m = sms(conn, mek)
     const type = getContentType(mek.message)
