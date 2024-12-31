@@ -18,7 +18,6 @@ const sendButtonMessage = async (jid) => {
          footer: "Choose an option below",
          buttons: [
            { buttonId: 'callToAction', buttonText: { displayText: 'Visit Website' }, type: 1, url: 'https://your-website.com' },
-           { buttonId: 'quickReply', buttonText: { displayText: 'Reply' }, type: 1 },
          ],
          headerType: 1,
        };
