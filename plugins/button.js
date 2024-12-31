@@ -37,7 +37,7 @@ let msg = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
             title: xmenu_oh,
-            subtitle: themeemoji,
+            subtitle: '🌹',
             hasMediaAttachment: false
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
