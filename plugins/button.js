@@ -9,7 +9,7 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-    await conn.sendMessage(m.id,{
+    await conn.sendMsg(m.id,{
       title: "Sadeesha",
       text: "Hi",
       buttons: [
