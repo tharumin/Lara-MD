@@ -22,7 +22,7 @@ let xmenu_oh = `
 ├ *🅟 = For Premium User*
 ╰─┬────❍
 `
-let msg = generateWAMessageFromContent(m.chat, {
+let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -38,7 +38,7 @@ let msg = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
             title: xmenu_oh,
-            subtitle: '🌹',
+            subtitle: 'hi',
             hasMediaAttachment: false
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
@@ -77,8 +77,7 @@ let msg = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: mek })
-await conn.sendMessage(msg.key.remoteJid, msg.message, {
-  messageId: msg.key.id
+await conn.sendMessage(from, { text: msg })
 })      
     } catch (e) {
         console.log(e);
