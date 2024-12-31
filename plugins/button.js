@@ -30,7 +30,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         for (let i = 0; i < selectedVideos.length; i++) {
           let video = selectedVideos[i];
           let cap = `Title : ${video.title}`;
-          const mediaMessage = await conn.sendMessage(from, {image: { url: video.thumbnail} });
+          const mediaMessage = await prepareWAMessageMedia({ image: { video.thumbnail}}, { upload: conn.waUploadToServer })
           push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
               text: 'Sadeesha'
