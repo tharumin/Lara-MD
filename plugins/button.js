@@ -11,7 +11,7 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         if (!q) return reply("Please give me a title.");
-        let search = await yts(text);
+        let search = await yts(q);
         let videos = search.all;
         console.log(videos)
         if (!videos || videos.length === 0) {
@@ -33,10 +33,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
           const mediaMessage = await conn.sendMessage(from, {image: { url: video.thumbnail} });
           push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
-              text: cap
+              text: 'Sadeesha'
             }),
             footer: proto.Message.InteractiveMessage.Footer.fromObject({
-              text: botname
+              text: 'lara-md'
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               title: `Video ${i + 1}`,
