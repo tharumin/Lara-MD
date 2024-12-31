@@ -119,7 +119,7 @@ _Selected Your Song Type 📥_
 *ᴍɪɴ ƚҽαɱ ₂₀₂₂🔥*`,
                     footer: 'Sadeesha',
                     buttons: buttons,
-                    headerType: 4
+                    headerType: 1
                 }
                 conn.sendMessage(m.chat, buttonMessage, { quoted: mek })
 
