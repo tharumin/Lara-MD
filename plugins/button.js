@@ -12,6 +12,17 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
+     const sendButtonMessage = async (text, footer, buttons) => {
+       const buttonMessage = {
+         text: text,
+         footer: footer,
+         buttons: buttons,
+         headerType: 1,
+       };
+
+       await sock.sendMessage(from, buttonMessage);
+       console.log('Button message sent successfully');
+     };
 const messageText = 'Hello! This is an interactive message with buttons.';
      const footerText = 'Choose an option below';
      const buttons = [
@@ -20,6 +31,8 @@ const messageText = 'Hello! This is an interactive message with buttons.';
      ];
 
      await conn.sendButtonMessage(from, messageText, footerText, buttons);
+
+
       } catch (e) {
       console.log(e);
       reply(`${e}`);
