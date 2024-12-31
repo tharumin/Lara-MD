@@ -10,26 +10,20 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-     const sendButtonMessage = async (text, footer, buttons) => {
-       const buttonMessage = {
-         text: text,
-         footer: footer,
-         buttons: buttons,
-         headerType: 1,
-       };
+const buttons = [
+  {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
+  {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1},
+  {buttonId: 'id3', buttonText: {displayText: 'Button 3'}, type: 1}
+]
 
-       await conn.sendMessage(from, buttonMessage);
-       console.log('Button message sent successfully');
-     };
-const messageText = 'Hello! This is an interactive message with buttons.';
-     const footerText = 'Choose an option below';
-     const buttons = [
-       { buttonId: 'id1', buttonText: { displayText: 'Option 1' }, type: 1 },
-       { buttonId: 'id2', buttonText: { displayText: 'Option 2' }, type: 1 },
-     ];
+const buttonMessage = {
+    text: "Hi it's button message",
+    footer: 'Hello World',
+    buttons: buttons,
+    headerType: 1
+}
 
-     await sendButtonMessage(from, messageText, footerText, buttons);
-
+const sendMsg = await conn.sendMessage(from, buttonMessage)
 
       } catch (e) {
       console.log(e);
