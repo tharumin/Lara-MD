@@ -79,6 +79,7 @@ let msg = generateWAMessageFromContent(from, {
 }, { quoted: mek })
 await conn.sendMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
+    })
     } catch (e) {
         console.log(e);
         reply(`${e}`);
