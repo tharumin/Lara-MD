@@ -67,3 +67,51 @@ await conn.sendMessage(from, {
         reply(`An error occurred: ${error.message}`);
     }
 });
+
+cmd({
+    pattern: "hentai",
+    alias: ["hendl"],
+    react: "🎥",
+    desc: "download hentai videos",
+    category: "download",
+    filename: __filename
+},
+async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+const response = await axios.get(`https://www.dark-yasiya-api.site/download/henati`);
+const hentai = response.data;
+const downloadUrl = hentai.result.video_1;
+const title = hentai.result.title;
+m.react('⬆️');
+ await conn.sendMessage(from, {
+              document: { url: downloadUrl },
+              mimetype: "video/mp4",
+              fileName: `${hentai.result.title}.mp4`,
+              caption: "*© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·*",
+              contextInfo: {
+                mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363192254044294@newsletter',
+                    newsletterName: "Lααɾα-ᴍᴅ ✻",
+                    serverMessageId: 999
+                },
+                externalAdReply: {
+                    title: 'LARA MD',
+                    body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
+                    mediaType: 1,
+                    sourceUrl: "https://github.com/sadiyamin",
+                    thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
+                    renderLargerThumbnail: false,
+                    showAdAttribution: true
+                }
+            }
+     }, {quoted: mek});
+    }
+});   
+     } catch (error) {
+        console.error(error);
+        reply(`An error occurred: ${error.message}`);
+    
