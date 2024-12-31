@@ -27,7 +27,7 @@ let msg = generateWAMessageFromContent(from, {
     message: {
         "messageContextInfo": {
           "deviceListMetadata": {},
-          "deviceListMetadataVersion": 2
+          "deviceListMetadataVersion": 3
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
