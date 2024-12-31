@@ -26,7 +26,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
        await conn.sendMessage(from, templateMessage);
        console.log('Views card message sent successfully');
 
-sendViewsCardMessage('from);
+sendViewsCardMessage(from);
 
       } catch (e) {
       console.log(e);
