@@ -1,5 +1,6 @@
 const { cmd, commands } = require('../command');
 const yts = require('yt-search');
+const config = require('../config');
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage} = require('@whiskeysockets/baileys');
 cmd({
     pattern: "sadee",
@@ -60,15 +61,15 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
+  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${config.prefix}allmenu"}`
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${config.prefix}owner"}`
               },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+                "buttonParamsJson": `{"display_text":"Script 📃","id":"${config.prefix}script"}`
               }
            ],
           })
