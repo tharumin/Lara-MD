@@ -20,7 +20,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
            { buttonId: 'id2', buttonText: { displayText: 'Share' }, type: 1 },
          ],
          headerType: 4,
-         image: { url: 'https://example.com/image.jpg' },
+         image: { url: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg' },
        };
 
        await conn.sendMessage(from, templateMessage);
