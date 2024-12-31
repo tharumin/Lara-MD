@@ -12,55 +12,23 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-conn.ev.on('messages.upsert', async (m) => {
-       console.log(JSON.stringify(m, undefined, 2));
-       console.log('Replying to', m.messages[0].key.remoteJid);
-       await conn.sendMessage(m.messages[0].key.remoteJid, {
-         text: 'Hello there!',
-         type: 'template',
-         template: {
-           namespace: '94779062397@s.whatsapp.net',
-           name: '94779062397@s.whatsapp.net',
-           language: {
-             policy: 'deterministic',
-             code: 'en_US',
-           },
-           components: [
-             {
-               type: 'body',
-               parameters: [
-                 {
-                   type: 'text',
-                   text: 'This is an interactive message!',
-                 },
-               ],
-             },
-             {
-               type: 'button',
-               sub_type: 'quick_reply',
-               index: '0',
-               parameters: [
-                 {
-                   type: 'payload',
-                   payload: 'BUTTON_1_PAYLOAD',
-                 },
-               ],
-             },
-             {
-               type: 'button',
-               sub_type: 'call_to_action',
-               index: '1',
-               parameters: [
-                 {
-                   type: 'payload',
-                   payload: '94779062397@s.whatsapp.net',
-                 },
-               ],
-             },
-           ],
-         },
-       });
-     });
+const sendButtonMessage = async (jid) => {
+       const buttonMessage = {
+         text: "Hello! This is an interactive message with action buttons.",
+         footer: "Choose an option below",
+         buttons: [
+           { buttonId: 'id1', buttonText: { displayText: 'Visit Website' }, type: 1, url: 'https://your-website.com' },
+           { buttonId: 'id2', buttonText: { displayText: 'Reply' }, type: 1 },
+         ],
+         headerType: 1,
+       };
+
+       await conn.sendMessage(jid, buttonMessage);
+
+     // Example usage: Replace 'recipient_phone_number@s.whatsapp.net' with actual recipient JID
+     sendButtonMessage('94701898308@s.whatsapp.net');
+   }
+
 
       } catch (e) {
       console.log(e);
