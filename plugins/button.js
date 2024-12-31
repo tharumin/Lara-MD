@@ -12,22 +12,14 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-       const templateMessage = {
-         text: "Check out this cool item!",
-         footer: "Click below for more options",
-         buttons: [
-           { buttonId: 'id1', buttonText: { displayText: 'View More' }, type: 1 },
-           { buttonId: 'id2', buttonText: { displayText: 'Share' }, type: 1 },
-         ],
-         headerType: 4,
-         image: { url: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg' },
-       };
+const messageText = 'Hello! This is an interactive message with buttons.';
+     const footerText = 'Choose an option below';
+     const buttons = [
+       { buttonId: 'id1', buttonText: { displayText: 'Option 1' }, type: 1 },
+       { buttonId: 'id2', buttonText: { displayText: 'Option 2' }, type: 1 },
+     ];
 
-       await conn.sendMessage(from, templateMessage);
-       console.log('Views card message sent successfully');
-
-sendViewsCardMessage(from);
-
+     await sendButtonMessage(from, messageText, footerText, buttons);
       } catch (e) {
       console.log(e);
       reply(`${e}`);
