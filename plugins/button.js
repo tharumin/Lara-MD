@@ -77,8 +77,7 @@ let msg = generateWAMessageFromContent(from, {
     }
   }
 }, { quoted: mek })
-await conn.sendMessage(from, { text: msg })
-})      
+await conn.sendMessage(from, { text: msg })      
     } catch (e) {
         console.log(e);
         reply(`${e}`);
