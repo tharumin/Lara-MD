@@ -30,7 +30,7 @@ const messageText = 'Hello! This is an interactive message with buttons.';
        { buttonId: 'id2', buttonText: { displayText: 'Option 2' }, type: 1 },
      ];
 
-     await conn.sendButtonMessage(from, messageText, footerText, buttons);
+     await sendButtonMessage(from, messageText, footerText, buttons);
 
 
       } catch (e) {
