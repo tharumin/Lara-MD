@@ -109,9 +109,9 @@ m.react('⬆️');
                 }
             }
      }, {quoted: mek});
-    }
-});   
+   
      } catch (error) {
         console.error(error);
-        reply(`An error occurred: ${error.message}`);
-    
+        reply(`An error occurred: ${error.message}`);    
+ }
+});   
