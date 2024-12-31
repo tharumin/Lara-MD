@@ -85,3 +85,46 @@ await conn.relayMessage(msg.key.remoteJid, msg.message, {
         reply(`${e}`);
     }
 })
+
+cmd({
+    pattern: "sadee",
+    desc: "button test",
+    react: "🎵",
+    category: "download",
+    filename: __filename
+},
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+                let search = await yts(q)
+                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
+                let buttons = [
+                    {buttonId: `ytaudio ${anu.url}`, buttonText: {displayText: '♫Audio♫'}, type: 1},
+                    {buttonId: `ytdocument ${anu.url}`, buttonText: {displayText: '📁Document📁'}, type: 1},                    
+                ]
+                let buttonMessage = {
+                    image: { url: anu.thumbnail },
+                    caption: `
+┏━━°:*💎සදීෂ_Min💎*:°━━┓
+
+│✑ ~🎧 Title~ : _${anu.title}_
+                                        
+│✑ ~⌛ Duration~ :_${anu.timestamp}_
+                                        
+│✑ ~👀 Viewes~ : _${anu.views}_
+                    
+┗━━°:*💎සදීෂ_Min💎*:°━━┛
+                    
+_Selected Your Song Type 📥_
+                    
+*ᴍɪɴ ƚҽαɱ ₂₀₂₂🔥*`,
+                    footer: 'Sadeesha',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                conn.sendMessage(m.chat, buttonMessage, { quoted: mek })
+
+        } catch (e) {
+        console.log(e);
+        reply(`${e}`);
+    }
+})
