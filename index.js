@@ -6,7 +6,7 @@ const {
     getContentType,
     fetchLatestBaileysVersion,
     Browsers
-    } = require('@whiskeysockets/baileys')
+    } = require('@neoxr/baileys')
 
     const l = console.log
     const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
