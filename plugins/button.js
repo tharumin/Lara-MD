@@ -95,33 +95,48 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-                let search = await yts(q)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    {buttonId: `ytaudio ${anu.url}`, buttonText: {displayText: '♫Audio♫'}, type: 1},
-                    {buttonId: `ytdocument ${anu.url}`, buttonText: {displayText: '📁Document📁'}, type: 1},                    
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
-                    caption: `
-┏━━°:*💎සදීෂ_Min💎*:°━━┓
-
-│✑ ~🎧 Title~ : _${anu.title}_
-                                        
-│✑ ~⌛ Duration~ :_${anu.timestamp}_
-                                        
-│✑ ~👀 Viewes~ : _${anu.views}_
-                    
-┗━━°:*💎සදීෂ_Min💎*:°━━┛
-                    
-_Selected Your Song Type 📥_
-                    
-*ᴍɪɴ ƚҽαɱ ₂₀₂₂🔥*`,
-                    footer: 'Sadeesha',
-                    buttons: buttons,
-                    headerType: 1
-                }
-                conn.sendMessage(m.chat, buttonMessage, { quoted: mek })
+               await conn.sendMessage(from, {
+         text: 'Hello there!',
+         type: 'template',
+         template: {
+           namespace: 'Sadeesha',
+           name: 'Sadeesha',
+           language: {
+             policy: 'deterministic',
+             code: 'en_US',
+           },
+           components: [
+             {
+               type: 'body',
+               parameters: [
+                 {
+                   type: 'text',
+                   text: 'This is an interactive message!',
+                 },
+               ],
+             },
+             {
+               type: 'button',
+               sub_type: 'quick_reply',
+               index: '0',
+               parameters: [
+                 {
+                   type: 'payload',
+                   payload: 'BUTTON_1_PAYLOAD',
+                 },
+               ],
+             },
+             {
+               type: 'button',
+               sub_type: 'call_to_action',
+               index: '1',
+               parameters: [
+                 {
+                   type: 'payload',
+                   payload: 'https://your-website.com',
+                 },
+               ],
+             },
 
         } catch (e) {
         console.log(e);
