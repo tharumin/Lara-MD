@@ -87,60 +87,62 @@ await conn.relayMessage(msg.key.remoteJid, msg.message, {
 })
 
 cmd({
-    pattern: "hukanawa",
-    desc: "button test",
-    react: "🎵",
-    category: "download",
-    filename: __filename
+  pattern: "ponnaya",
+  desc: "button test",
+  react: "🎵",
+  category: "download",
+  filename: __filename
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-               await conn.sendMessage(from, {
-         text: 'Hello there!',
-         type: 'template',
-         template: {
-           namespace: 'Sadeesha',
-           name: 'Sadeesha',
-           language: {
-             policy: 'deterministic',
-             code: 'en_US',
-           },
-           components: [
-             {
-               type: 'body',
-               parameters: [
-                 {
-                   type: 'text',
-                   text: 'This is an interactive message!',
-                 },
-               ],
-             },
-             {
-               type: 'button',
-               sub_type: 'quick_reply',
-               index: '0',
-               parameters: [
-                 {
-                   type: 'payload',
-                   payload: 'BUTTON_1_PAYLOAD',
-                 },
-               ],
-             },
-             {
-               type: 'button',
-               sub_type: 'call_to_action',
-               index: '1',
-               parameters: [
-                 {
-                   type: 'payload',
-                   payload: 'https://your-website.com',
-                 },
-               ],
-             },
+  try {
+             await conn.sendMessage(from, {
+       text: 'Hello there!',
+       type: 'template',
+       template: {
+         namespace: 'Sadeesha',
+         name: 'Sadeesha',
+         language: {
+           policy: 'deterministic',
+           code: 'en_US',
+         },
+         components: [
+           {
+             type: 'body',
+             parameters: [
+               {
+                 type: 'text',
+                 text: 'This is an interactive message!',
                },
-               })
-        } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
+             ],
+           },
+           {
+             type: 'button',
+             sub_type: 'quick_reply',
+             index: '0',
+             parameters: [
+               {
+                 type: 'payload',
+                 payload: 'BUTTON_1_PAYLOAD',
+               },
+             ],
+           },
+           {
+             type: 'button',
+             sub_type: 'call_to_action',
+             index: '1',
+             parameters: [
+               {
+                 type: 'payload',
+                 payload: 'https://your-website.com',
+               },
+             ],
+           },
+          ]
+             },
+             })
+      } catch (e) {
+      console.log(e);
+      reply(`${e}`);
+  }
 })
+
