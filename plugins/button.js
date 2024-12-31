@@ -10,21 +10,19 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-const buttons = [
-  {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
-  {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1},
-  {buttonId: 'id3', buttonText: {displayText: 'Button 3'}, type: 1}
+const templateButtons = [
+    {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+    {index: 2, callButton: {displayText: 'Call me!', phoneNumber: '+1 (234) 5678-901'}},
+    {index: 3, quickReplyButton: {displayText: 'This is a reply, just like normal buttons!', id: 'id-like-buttons-message'}},
 ]
 
-const buttonMessage = {
-    text: "Hi it's button message",
+const templateMessage = {
+    text: "Hi it's a template message",
     footer: 'Hello World',
-    buttons: buttons,
-    headerType: 1
+    templateButtons: templateButtons
 }
 
-const sendMsg = await conn.sendMessage(from, buttonMessage)
-
+await conn.sendMessage(from, templateMessage)
       } catch (e) {
       console.log(e);
       reply(`${e}`);
