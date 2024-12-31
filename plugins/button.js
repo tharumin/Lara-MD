@@ -2,7 +2,7 @@ const { cmd, commands } = require('../command');
 const yts = require('yt-search');
 const config = require('../config');
 cmd({
-  pattern: "pakaya",
+  pattern: "button",
   desc: "button test",
   react: "🎵",
   category: "download",
