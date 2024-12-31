@@ -19,16 +19,18 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
           .stringify({
             title: "Menu",
             sections: [
-              title: "fuck me",
-              highlight_label: "fuck",
-              rows: [
+              {
+            title: "fuck me",
+            highlight_label: "hi",
+            rows: [
                 {
                   header: "Sadeesha",
                   title: "Menu1",
                   description: "Description",
                   id: ".menu",
                 }
-                ]
+                ];
+              }
               ];
               
           })
