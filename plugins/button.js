@@ -17,7 +17,7 @@ const sendButtonMessage = async (jid) => {
          text: "Hello! This is an interactive message with action buttons.",
          footer: "Choose an option below",
          buttons: [
-           { buttonId: 'callToAction', buttonText: { displayText: 'Visit Website' }, type: 1, url: 'https://your-website.com' },
+           { buttonId: 'callToAction', buttonText: { displayText: 'Visit Website' }, type: 1, url: 'recipient_phone_number@s.whatsapp.net' },
          ],
          headerType: 1,
        };
