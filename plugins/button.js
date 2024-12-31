@@ -12,22 +12,20 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-const sendButtonMessage = async (jid) => {
-       const buttonMessage = {
-         text: "Hello! This is an interactive message with action buttons.",
-         footer: "Choose an option below",
+       const templateMessage = {
+         text: "Check out this cool item!",
+         footer: "Click below for more options",
          buttons: [
-           { buttonId: 'id1', buttonText: { displayText: 'Visit Website' }, type: 1, url: 'https://your-website.com' },
-           { buttonId: 'id2', buttonText: { displayText: 'Reply' }, type: 1 },
+           { buttonId: 'id1', buttonText: { displayText: 'View More' }, type: 1 },
+           { buttonId: 'id2', buttonText: { displayText: 'Share' }, type: 1 },
          ],
-         headerType: 1,
+         headerType: 4,
+         image: { url: 'https://example.com/image.jpg' },
        };
 
-       await conn.sendMessage(jid, buttonMessage);
+       await conn.sendMessage(from, templateMessage);
+       console.log('Views card message sent successfully');
 
-     // Example usage: Replace 'recipient_phone_number@s.whatsapp.net' with actual recipient JID
-     sendButtonMessage('94701898308@s.whatsapp.net');
-   }
 
 
       } catch (e) {
