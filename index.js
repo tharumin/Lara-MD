@@ -172,7 +172,7 @@ const reactionMessage = {
 
        await sock.sendMessage(jid, reactionMessage);
      };
-
+}
     const m = sms(conn, mek)
     const type = getContentType(mek.message)
     const content = JSON.stringify(mek.message)
