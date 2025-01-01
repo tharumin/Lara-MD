@@ -94,7 +94,7 @@ const buttonMessage = {
     image: {url: 'https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg'}
 }
 
-   conn.sendMessage(ownerNumber + "@s.whatsapp.net", templateMessage)
+   conn.sendMessage(ownerNumber + "@s.whatsapp.net", buttonMessage)
    conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: tek,
     contextInfo: {
       mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
