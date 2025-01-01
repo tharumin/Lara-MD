@@ -67,11 +67,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"Owner 👤","id":"${config.prefix+command} owner"}`
+                    "buttonParamsJson": `{"display_text":"Owner 👤","id":"${config.prefix}owner"}`
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"Script 📃","id":"${config.prefix+command} repo"}`
+                    "buttonParamsJson": `{"display_text":"Script 📃","id":"${config.prefix}repo"}`
                 }
               ]
             })
