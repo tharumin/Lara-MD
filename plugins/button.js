@@ -58,7 +58,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         }
         let sadee = `Sadeesha`;
         let foot2 = `lara-MD`;
-        const msg = await conn.sendMessage(from, {
+        const msg = generateWAMessageFromContent(from, {
           viewOnceMessage: {
             message: {
               messageContextInfo: {
@@ -85,14 +85,14 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardedNewsletterMessageInfo: {
                       newsletterJid: '120363222395675670@newsletter',
                       newsletterName: 'lara',
-                      serverMessageId: 1
+                      serverMessageId: 999
                     }
                     }
               })
             }
           }
         }, {quoted:mek});
-        await conn.relayMessage(from, msg.message, {
+        await conn.sendMessage(from, msg.message, {
           messageId: msg.key.id
         });
     console.log('Button Send Sucsses');
