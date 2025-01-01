@@ -214,7 +214,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     reply(`${e}`);
 
       cmd({
-    pattern: "pakaya",
+    pattern: "puca",
     desc: "button test",
     react: "🎵",
     category: "download",
