@@ -84,17 +84,23 @@ const {
 
 > ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ
 `
-const templateButtons = [
-  {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+const buttons = [
+  {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
+  {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1},
+  {buttonId: 'id3', buttonText: {displayText: 'Button 3'}, type: 1}
 ]
 
 const buttonMessage = {
-    text: "Hi it's a template message",
-    templateButtons: templateButtons,
-    image: {url: 'https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg'}
+    image: {url: 'https://i.ibb.co/GQ6JdpF/20241127-133421.jpg'},
+    caption: "Hi it's button message",
+    footer: 'Hello World',
+    buttons: buttons,
+    headerType: 4
 }
 
-   conn.sendMessage(ownerNumber + "@s.whatsapp.net", buttonMessage)
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", buttonMessage);
+
+        
    conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: tek,
     contextInfo: {
       mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
