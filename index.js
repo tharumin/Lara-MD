@@ -71,7 +71,7 @@ const {
     console.log('Plugins installed successful ✅')
     console.log('Lara MD connected to whatsapp ✅\nCreated By Sadeesha Tharumin')
     
-    let up = `
+    let tek = `
 *ʟᴀʀᴀ-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʏ ✅*
 
 📚 _ᴛʏᴘᴇ *.menu* ᴀɴᴅ ɢᴇᴛ ʟᴀʀᴀ ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ_
@@ -84,47 +84,17 @@ const {
 
 > ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ
 `
-let tek = `
+const templateButtons = [
+  {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+]
 
-┏━┫*⚬Lααɾα-ᴍᴅ-ꜱᴇᴛᴛɪɴɢꜱ⚬*┣━✾
-┃            *ᴸ  ͣ  ͣ  ͬ  ͣ  ✻  ᴸ  ͣ  ͣ  ͬ  ͣ*
-┻
-*ᴍᴏᴅᴇ ➭* _${config.MODE}_
-*ᴄʜᴀᴛ_ʀᴇᴘʟʏ ➭* _${config.AUTO_REPLY}_
-*ᴠᴏɪᴄᴇ_ʀᴇᴘʟʏ ➭* _${config.AUTO_VOICE}_
-*ꜱᴛɪᴄᴋᴇʀ_ʀᴇᴘʟʏ ➭* _${config.AUTO_STICKER}_
-*ᴀᴜᴛᴏ_ʀᴇᴀᴅ_ꜱᴛᴀᴛᴜꜱ ➭* _${config.AUTO_READ_STATUS}_
-*ᴀᴜᴛᴏ_ʀᴇᴀᴄᴛ ➭* _${config.AUTO_REACT}_
-*ᴀɴᴛɪ_ʙᴀᴅ_ᴡᴏʀᴅ ➭* _${config.ANTI_BAD}_
-*ᴀɴᴛɪ_ʟɪɴᴋ ➭* _${config.ANTI_LINK}_
-*ᴀᴜᴛᴏ_ʀᴇᴀᴅ_ᴍꜱɢ ➭* _${config.READ_MESSAGE}_
-*ꜱᴛᴀᴛᴜꜱ_ʀᴇᴘʟʏ ➭* _true_
-*ꜰᴀᴋᴇ_ʀᴇᴄᴏʀᴅɪɴɢ ➭* _${config.FAKE_RECORDING}_
+const buttonMessage = {
+    text: "Hi it's a template message",
+    templateButtons: templateButtons,
+    image: {url: 'https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg'}
+}
 
-> Lααɾα-ᴍᴅ ✻
-`
-   conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` }, caption: up,
-    contextInfo: {
-      mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
-      groupMentions: [],
-      forwardingScore: 1,
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363192254044294@newsletter',
-          newsletterName: "Lααɾα-ᴍᴅ ✻",
-          serverMessageId: 999
-      },
-      externalAdReply: {
-          title: 'LARA MD',
-          body: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴛʜᴀʀᴜᴍɪɴ',
-          mediaType: 1,
-          sourceUrl: "https://github.com/sadiyamin",
-          thumbnailUrl: 'https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/20241214_204755.jpg', // This should match the image URL provided above
-          renderLargerThumbnail: false,
-          showAdAttribution: true
-      }
-  }
-});
+   conn.sendMessage(ownerNumber + "@s.whatsapp.net", templateMessage)
    conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: tek,
     contextInfo: {
       mentionedJid: ['94779062397@s.whatsapp.net'], // specify mentioned JID(s) if any
