@@ -49,8 +49,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
               buttons: [
                 {
-                  "name": "cta_copy",
-                  "buttonParamsJson": `{"display_text":"Copy Url","id":"1234","copy_code":"${video.url}"}`
+                  "name": "quick_reply",
+                    "buttonParamsJson": `{"display_text":"Owner 👤","id":".owner"}`
                 }
               ]
             })
@@ -260,8 +260,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
               buttons: [
                 {
-                  "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"Owner 👤","id":".owner"}`
+                "name": "cta_copy",
+                  "buttonParamsJson": `{"display_text":"Copy Url","id":"1234","copy_code":"${video.url}"}`
                 }
               ]
             })
