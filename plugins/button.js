@@ -50,7 +50,27 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
               buttons: [
                 {
                   "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                     "name": "cta_url",
                      "buttonParamsJson": "{\"display_text\":\"WebSite 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                     "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                     "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                    "name": "quick_reply",
+                    "buttonParamsJson": `{"display_text":"Owner 👤","id":".owner"}`
+                  },
+                  {
+                    "name": "quick_reply",
+                    "buttonParamsJson": `{"display_text":"Script 📃","id":".repo"}`
                 }
               ]
             })
