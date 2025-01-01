@@ -141,7 +141,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: `Hi ${pushName}\nPlease click on the button below`
+            text: `Hi\nPlease click on the button below`
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: foot
