@@ -83,7 +83,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                       forwardingScore: 999,
                       isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                      newsletterJid: '120363222395675670@newsletter',
+                      newsletterJid: '120363192254044294@newsletter',
                       newsletterName: 'lara',
                       serverMessageId: 143
                     }
@@ -100,4 +100,117 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         console.log(e);
         reply(`${e}`);
     }
+})
+
+cmd({
+  pattern: "pakaya",
+  desc: "button test",
+  react: "🎵",
+  category: "download",
+  filename: __filename
+},
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+  try {
+    const sadee_menu = `
+    *ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ*
+
+    *Mama kariyek utto*
+    `
+    let botname = `LARA-MD`
+    let msg = generateWAMessageFromContent(m.chat, {
+      viewOnceMessage: {
+        message: {
+            "messageContextInfo": {
+              "deviceListMetadata": {},
+              "deviceListMetadataVersion": 2
+            },
+            interactiveMessage: proto.Message.InteractiveMessage.create({
+              body: proto.Message.InteractiveMessage.Body.create({
+                text: sadee_menu
+              }),
+              footer: proto.Message.InteractiveMessage.Footer.create({
+                text: botname
+              }),
+              header: proto.Message.InteractiveMessage.Header.create({
+                    ...(await prepareWAMessageMedia({ image : {url: `https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg`}}, { upload: conn.waUploadToServer})), 
+                      title: ``,
+                      gifPlayback: true,
+                      subtitle: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ',
+                      hasMediaAttachment: false  
+                    }),
+              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                buttons: [
+                  {
+                    "name": "single_select",
+                    "buttonParamsJson": 
+    `{"title":"MENU 🌺",
+    "sections":[{"title":"LARA-MD",
+    "rows":[{"header":"ALL MENU",
+    "title":"click to display",
+    "description":"Displays The List Of All The Features",
+    "id":"allmenu"},
+    {"header":"SEARCH MENU",
+    "title":"click to display",
+    "description":"Displays The List Of Search Features",
+    "id":"searchmenu"},
+    {"header":"DOWNLOAD MENU",
+    "title":"click to display",
+    "description":"Displays The List Of Download Features",
+    "id":"downloadmenu"},
+    {"header":"OTHER MENU",
+    "title":"click to display",
+    "description":"Displays The List Of Other Features",
+    "id":"othermenu"}]
+    }]
+    }`
+                  },
+                  {
+                     "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                     "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"WebSite 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                     "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                     "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
+                  },
+                  {
+                    "name": "quick_reply",
+                    "buttonParamsJson": `{"display_text":"Owner 👤","id":".owner"}`
+                  },
+                  {
+                    "name": "quick_reply",
+                    "buttonParamsJson": `{"display_text":"Script 📃","id":".repo"}`
+                  }
+               ],
+              }),
+              contextInfo: {
+                      mentionedJid: ['94779062397@s.whatsapp.net'], 
+                      forwardingScore: 999,
+                      isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                      newsletterJid: '120363192254044294@newsletter',
+                      newsletterName: 'ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ',
+                      serverMessageId: 143
+                    }
+                    }
+            })
+        }
+      }
+    }, { quoted: mek })
+    
+    await conn.relayMessage(from, msg.message, {
+      messageId: msg.key.id
+    })
+    console.log('Button Send Sucsses');
+  } catch (e) {
+    console.log(e);
+    reply(`${e}`);
+}
 })
