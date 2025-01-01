@@ -95,7 +95,7 @@ const buttonMessage = {
     caption: "Hi it's button message",
     footer: 'Hello World',
     buttons: buttons,
-    headerType: 4
+    headerType: 1
 }
 
 conn.sendMessage(ownerNumber + "@s.whatsapp.net", buttonMessage);
