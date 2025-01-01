@@ -9,33 +9,20 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
   try {
-    
-     // Function to send a button message
-     const sendButtonMessage = async (jid, text, footer, buttons) => {
-       const buttonMessage = {
-         text: text,
-         footer: footer,
-         buttons: buttons,
-         headerType: 1,
-       };
+    const templateButtons = [
+  {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+]
 
-       await conn.sendMessage(jid, buttonMessage);
-       console.log('Button message sent successfully');
-     };
+const buttonMessage = {
+    text: "Hi it's a template message",
+    templateButtons: templateButtons,
+    image: {url: 'https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg'}
+}
 
-     // Example usage: Replace 'recipient_phone_number@s.whatsapp.net' with the recipient JID
-     const recipientJid = '94779062397@s.whatsapp.net';
-     const messageText = 'Hello! This is an interactive message with buttons.';
-     const footerText = 'Choose an option below';
-     const buttons = [
-       { buttonId: 'id1', buttonText: { displayText: 'Option 1' }, type: 1 },
-       { buttonId: 'id2', buttonText: { displayText: 'Option 2' }, type: 1 },
-     ];
-
-     sendButtonMessage(recipientJid, messageText, footerText, buttons);
-
-
-    
+await conn.sendMessage(from, templateMessage)
+await await conn.sendMessage(from, {
+            image: { url: 'https://i.ibb.co/gzDsLsb/IMG-20241127-WA0023.jpg'} // Ensure `img.allmenu` is a valid image URL or base64 encoded image
+             }, { quoted: mek })  
       } catch (e) {
       console.log(e);
       reply(`${e}`);
