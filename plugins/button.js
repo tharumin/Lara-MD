@@ -1,7 +1,8 @@
 const { cmd, commands } = require('../command');
 const yts = require('yt-search');
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage} = require('@whiskeysockets/baileys');
-/*
+const config = require('../config');
+
 cmd({
     pattern: "sadee",
     desc: "button test",
@@ -66,11 +67,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"Owner 👤","id":".owner"}`
+                    "buttonParamsJson": `{"display_text":"Owner 👤","id":"${config.prefix}+owner"}`
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"Script 📃","id":".repo"}`
+                    "buttonParamsJson": `{"display_text":"Script 📃","id":"${config.prefix}+repo"}`
                 }
               ]
             })
@@ -116,92 +117,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
           messageId: msg.key.id
         });
     console.log('Button Send Sucsses');
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-})
-*/
-      cmd({
-    pattern: "pakaya",
-    desc: "button test",
-    react: "🎵",
-    category: "download",
-    filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-          let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
-         let msg = generateWAMessageFromContent(from, {
-  viewOnceMessage: {
-    message: {
-        "messageContextInfo": {
-          "deviceListMetadata": {},
-          "deviceListMetadataVersion": 2
-        },
-        interactiveMessage: proto.Message.InteractiveMessage.create({
-          body: proto.Message.InteractiveMessage.Body.create({
-            text: `Hi\nPlease click on the button below`
-          }),
-          footer: proto.Message.InteractiveMessage.Footer.create({
-            text: foot
-          }),
-          header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : {url:`https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`}}, { upload: conn.waUploadToServer})), 
-                  title: ``,
-                  gifPlayback: true,
-                  subtitle: foot,
-                  hasMediaAttachment: false  
-                }),
-          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-            buttons: [
-              {
-                "name": "single_select",
-                "buttonParamsJson": `{"title":"SELECT REPLY 🐛",
-"sections":[{"title":"SELECT THE REPLY BELOW",
-"highlight_label":"OWNER'S FAVOURITE",
-"rows":[{"header":"CHANNEL + LINK THUMB",
-"title":"CHOOSE ",
-"description":"CHANNEL + LINK THUMB",
-"id":"v4"},
-{"header":"LARGE LINK + THUMBNAIL",
-"title":"CHOOSE ",
-"description":"LARGE LINK + THUMBNAIL",
-"id":"v3"},
-{"header":"LINK + FAKE THUMBNAIL",
-"title":"CHOOSE ",
-"description":"LINK + FAKE THUMBNAIL",
-"id":"v2"},
-{"header":"QUOTED NORMALLY",
-"title":"CHOOSE ",
-"description":"QUOTED NORMALLY",
-"id":"v1"}
-]
-}
-]
-}`
-              }
-           ],
-          }),
-          contextInfo: {
-                  mentionedJid: [m.sender], 
-                  forwardingScore: 999,
-                  isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363192254044294@newsletter',
-                  newsletterName: foot,
-                  serverMessageId: 143
-                }
-                }
-        })
-    }
-  }
-}, { quoted: mek })
-
-await conn.relayMessage(from, msg.message, {
-  messageId: msg.key.id
-})
-console.log('Button Send Sucsses');
     } catch (e) {
         console.log(e);
         reply(`${e}`);
