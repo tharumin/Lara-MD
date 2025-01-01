@@ -201,4 +201,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 await conn.relayMessage(from, msg.message, {
   messageId: msg.key.id
 })
-}
+console.log('Button Send Sucsses');
+    } catch (e) {
+        console.log(e);
+        reply(`${e}`);
+    }
+})
