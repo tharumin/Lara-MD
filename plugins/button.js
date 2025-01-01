@@ -58,7 +58,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         }
         let sadee = `Sadeesha`;
         let foot2 = `lara-MD`;
-        const msg = generateWAMessageFromContent(from, {
+        const msg = await conn.sendMessage(from, {
           viewOnceMessage: {
             message: {
               messageContextInfo: {
