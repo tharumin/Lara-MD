@@ -147,7 +147,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             text: foot
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : {url:`https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`})}, { upload: conn.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : {url:`https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`}}, { upload: conn.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: foot,
