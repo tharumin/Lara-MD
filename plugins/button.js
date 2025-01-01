@@ -80,12 +80,12 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                 }),
                 contextInfo: {
                       mentionedJid: ['94779062397@s.whatsapp.net'], 
-                      forwardingScore: 999,
+                      forwardingScore: 1,
                       isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                       newsletterJid: '120363222395675670@newsletter',
                       newsletterName: 'lara',
-                      serverMessageId: 143
+                      serverMessageId: 1
                     }
                     }
               })
