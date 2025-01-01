@@ -1,6 +1,6 @@
 const { cmd, commands } = require('../command');
 const yts = require('yt-search');
-const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage} = require('@neoxr/baileys');
+const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage} = require('@whiskeysockets/baileys');
 
 cmd({
     pattern: "sadee",
@@ -92,7 +92,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
           }
         }, {quoted:mek});
-        await conn.sendMessage(from, msg.message, {
+        await conn.relayMessage(from, msg.message, {
           messageId: msg.key.id
         });
     console.log('Button Send Sucsses');
