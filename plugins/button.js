@@ -31,7 +31,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         for (let i = 0; i < selectedVideos.length; i++) {
           let video = selectedVideos[i];
           let cap = `Title : ${video.title}`;
-          let foot = `lara`;
+          let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
           const mediaMessage = await prepareWAMessageMedia({ image: { url: video.thumbnail } }, { upload: conn.waUploadToServer });
           push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
@@ -56,8 +56,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             })
           });
         }
-        let sadee = `Sadeesha`;
-        let foot2 = `lara-MD`;
+        let sadee = `LARA - MD`;
+        let foot2 = `ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
         const msg = generateWAMessageFromContent(from, {
           viewOnceMessage: {
             message: {
@@ -80,12 +80,12 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                 }),
                 contextInfo: {
                       mentionedJid: ['94779062397@s.whatsapp.net'], 
-                      forwardingScore: 1,
+                      forwardingScore: 999,
                       isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                       newsletterJid: '120363222395675670@newsletter',
                       newsletterName: 'lara',
-                      serverMessageId: 999
+                      serverMessageId: 143
                     }
                     }
               })
