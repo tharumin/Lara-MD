@@ -49,8 +49,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
               buttons: [
                 {
-                  "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"Owner 👤","id":".owner"}`
+                  "name": "cta_url",
+                     "buttonParamsJson": "{\"display_text\":\"WebSite 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
                 }
               ]
             })
