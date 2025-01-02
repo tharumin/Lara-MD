@@ -194,7 +194,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
               "buttonParamsJson": `{\"display_text\":\"🧐\",\"id\":\"\"}`
             }],
           }),
-let msgs = generateWAMessageFromContent(m.chat, {
+const msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
