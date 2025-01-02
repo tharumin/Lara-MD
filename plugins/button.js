@@ -51,7 +51,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
               buttons: [
                 {
                   "name": "cta_url",
-                     "buttonParamsJson": "{\"display_text\":\"YouTube 🎊\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
+                     "buttonParamsJson": "{\"display_text\":\"YouTube 🎊\",\"url\":\"https://youtube.com/@Sadeesha_Coder\",\"merchant_url\":\"https://www.google.com\"}"
                   },
                   {
                      "name": "cta_url",
@@ -67,11 +67,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":".Owner 👤","id":"${config.prefix}owner"}`
+                    "buttonParamsJson": `{"display_text":"1","id":"1"}`
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":".Repo 📃","id":"${config.prefix}repo"}`
+                    "buttonParamsJson": `{"display_text":"2","id":"2"}`
                 }
               ]
             })
@@ -113,10 +113,63 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
           }
         }, {quoted:mek});
-        await conn.relayMessage(from, msg.message, {
+       const sentMsg = await conn.relayMessage(from, msg.message, {
           messageId: msg.key.id
         });
     console.log('Button Send Sucsses');
+
+        const messageID = sentMsg.key.id;
+        conn.ev.on('messages.upsert', async (messageUpdate) => {
+            const mek = messageUpdate.messages[0];
+            if (!mek.message) return;
+            const messageType = mek.message.conversation || mek.message.extendedTextMessage?.text;
+            const from = mek.key.remoteJid;
+            const sender = mek.key.participant || mek.key.remoteJid;
+
+            // Check if the message is a reply to the previously sent message
+            const isReplyToSentMsg = mek.message.extendedTextMessage && mek.message.extendedTextMessage.contextInfo.stanzaId === messageID;
+
+            if (isReplyToSentMsg) {
+                // React to the user's reply (the "1" or "2" message)
+                await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } }); 
+if (messageType === '1') {
+                const down =  await fetchJson(`https://www.dark-yasiya-api.site/download/ytmp3?url=${video.url}`);
+                const downloadUrl = down.result.dl_link;
+    await conn.sendMessage(from, { 
+                        audio: { url: downloadUrl }, 
+                        mimetype: "audio/mpeg" ,
+                        contextInfo: {
+                            externalAdReply: {
+                                title: data.title,
+                                body: data.videoId,
+                                mediaType: 1,
+                                sourceUrl: data.url,
+                                thumbnailUrl: data.thumbnail, // This should match the image URL provided above
+                                renderLargerThumbnail: true,
+                                showAdAttribution: true
+                            }
+                        }
+                    
+                    }, { quoted: mek });
+                    await conn.sendMessage(from, { react: { text: '✅', key: mek.key } });
+    } else if (messageType === '2') {
+                const down =  await fetchJson(`https://www.dark-yasiya-api.site/download/ytmp3?url=${url}`);
+                const downloadUrl = down.result.dl_link;
+                    // Handle option 2 (Document File)
+                    await conn.sendMessage(from, {
+                        document: { url: downloadUrl},
+                        mimetype: "audio/mp3",
+                        fileName: `${data.title}.mp3`, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
+                        caption: info
+                                            
+                      }, { quoted: mek });
+                      await conn.sendMessage(from, { react: { text: '✅', key: mek.key } });
+                      await conn.sendMessage(from, { delete: sentMsg.key });
+                }
+            }
+        });
+
+                
     } catch (e) {
         console.log(e);
         reply(`${e}`);
