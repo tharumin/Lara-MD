@@ -186,7 +186,7 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
  let push = [];
-        for (let i = 0;) {       
+        for let i = 0; {       
 let cap = `Title`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
           const mediaMessage = await prepareWAMessageMedia({ image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` } }, { upload: conn.waUploadToServer });
