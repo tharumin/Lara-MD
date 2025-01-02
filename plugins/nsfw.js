@@ -1,5 +1,6 @@
 const {cmd,commands} = require('../command')
-const {fetchJson} = require('../lib/functions')                           
+const {fetchJson} = require('../lib/functions')
+const cheerio = require('cheerio')
 
 cmd({
   pattern: 'pussy',
