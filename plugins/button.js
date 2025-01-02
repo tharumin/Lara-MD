@@ -210,7 +210,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          })
+          }),
               contextInfo: {
                       mentionedJid: ['94779062397@s.whatsapp.net'], 
                       forwardingScore: 999,
