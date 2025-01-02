@@ -67,7 +67,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                   },
                   {
                     "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"1","id":"1"}`
+                    "buttonParamsJson": `{"display_text":"1","id":".woner"}`
                   },
                   {
                     "name": "quick_reply",
@@ -113,7 +113,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
           }
         }, {quoted:mek});
-       const sadeeSend = await conn.relayMessage(from, msg.message, {
+       const sadeeSend = await conn.relayMessage(msg.key.remoteJid, msg.message, {
           messageId: msg.key.id
         });
     console.log('Button Send Sucsses');
