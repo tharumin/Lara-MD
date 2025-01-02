@@ -1,3 +1,4 @@
+/*
 const {
     default: makeWASocket,
     getAggregateVotesInPollMessage, 
@@ -97,3 +98,4 @@ console.log(e)
 reply(`*please try againg⭕*`)
 }
 })
+*/
