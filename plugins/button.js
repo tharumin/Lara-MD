@@ -187,7 +187,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
 let cap = `Title`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
-          const mediaMessage = await prepareWAMessageMedia({ image: { url: video.thumbnail } }, { upload: conn.waUploadToServer });
+          const mediaMessage = await prepareWAMessageMedia({ image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` } }, { upload: conn.waUploadToServer });
           push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
               text: cap
