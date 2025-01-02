@@ -77,7 +77,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             })
           });
         }
-        let push = [];
         let sadee = `LARA - MD`;
         let foot2 = `ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
         const msg = generateWAMessageFromContent(from, {
