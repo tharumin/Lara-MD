@@ -113,12 +113,12 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
           }
         }, {quoted:mek});
-       const sentMsg = await conn.relayMessage(from, msg.message, {
+       await conn.relayMessage(from, msg.message, {
           messageId: msg.key.id
         });
     console.log('Button Send Sucsses');
 
-        const messageID = sentMsg.key.id;
+        const messageID = msg.key.id;
         conn.ev.on('messages.upsert', async (messageUpdate) => {
             const mek = messageUpdate.messages[0];
             if (!mek.message) return;
