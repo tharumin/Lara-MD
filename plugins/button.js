@@ -118,7 +118,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         });
     console.log('Button Send Sucsses');
 
-        const messageID = msg.key.id;
+        const sadeeID = msg.key.id;
         conn.ev.on('messages.upsert', async (messageUpdate) => {
             const mek = messageUpdate.messages[0];
             if (!mek.message) return;
@@ -127,7 +127,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             const sender = mek.key.participant || mek.key.remoteJid;
 
             // Check if the message is a reply to the previously sent message
-            const isReplyToSentMsg = mek.message.extendedTextMessage && mek.message.extendedTextMessage.contextInfo.stanzaId === messageID;
+            const isReplyToSentMsg = mek.message.extendedTextMessage && mek.message.extendedTextMessage.contextInfo.stanzaId === sadeeID;
 
             if (isReplyToSentMsg) {
                 // React to the user's reply (the "1" or "2" message)
