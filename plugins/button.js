@@ -251,9 +251,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                 header: proto.Message.InteractiveMessage.Header.create({
                   hasMediaAttachment: false
                 }),
-                carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
-                  cards: push
-                }),
                 contextInfo: {
                       mentionedJid: ['94779062397@s.whatsapp.net'], 
                       forwardingScore: 999,
