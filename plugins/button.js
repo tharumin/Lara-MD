@@ -187,87 +187,45 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
           let cap = `Test`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
-          const mediaMessage = await prepareWAMessageMedia({ image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` } }, { upload: conn.waUploadToServer });
-        ({    
-            body: proto.Message.InteractiveMessage.Body.fromObject({
-              text: cap
-            }),
-            footer: proto.Message.InteractiveMessage.Footer.fromObject({
-              text: foot
-            }),
-            header: proto.Message.InteractiveMessage.Header.create({
-              title: `Video`,
-              subtitle: 'Sadeesha',
-              hasMediaAttachment: true,
-              ...mediaMessage
-            }),
-            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-              buttons: [
-                {
-                  "name": "cta_url",
-                     "buttonParamsJson": "{\"display_text\":\"YouTube 🎊\",\"url\":\"https://youtube.com/@Sadeesha_Coder\",\"merchant_url\":\"https://www.google.com\"}"
-                  },
-                  {
-                     "name": "cta_url",
-                     "buttonParamsJson": "{\"display_text\":\"WebSite 🎈\",\"url\":\"link\",\"merchant_url\":\"https://www.google.com\"}"
-                  },
-                  {
-                     "name": "cta_url",
-                     "buttonParamsJson": "{\"display_text\":\"GitHub 📚\",\"url\":\"https://github.com/sadiyamin\",\"merchant_url\":\"https://www.google.com\"}"
-                  },
-                  {
-                     "name": "cta_url",
-                     "buttonParamsJson": "{\"display_text\":\"WhatsApp 🌷\",\"url\":\"https://whatsapp.com/channel/0029VaD5t8S1nozDfDDjRj2J\",\"merchant_url\":\"https://www.google.com\"}"
-                  },
-                  {
-                    "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"1","id":"1"}`
-                  },
-                  {
-                    "name": "quick_reply",
-                    "buttonParamsJson": `{"display_text":"2","id":"2"}`
+          let msgs = generateWAMessageFromContent(m.chat, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: cap
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: foot
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+          hasMediaAttachment: false,
+          ...await prepareWAMessageMedia({ image: url:(`https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`) }, { upload: conn.waUploadToServer })
+          }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [{
+            "name": "quick_reply",
+              "buttonParamsJson": `{\"display_text\":\"🧐\",\"id\":\"\"}`
+            }],
+          }),
+          contextInfo: {
+                  mentionedJid: [m.sender], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '120363192254044294@newsletter',
+                  newsletterName: 'Sadeeesha',
+                  serverMessageId: 143
                 }
-              ]
-            })
-          });
-        
-        let sadee = `LARA - MD`;
-        let foot2 = `ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
-        const msg = generateWAMessageFromContent(from, {
-          viewOnceMessage: {
-            message: {
-              messageContextInfo: {
-                deviceListMetadata: {},
-                deviceListMetadataVersion: 2
-              },
-              interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-                body: proto.Message.InteractiveMessage.Body.create({
-                  text: sadee
-                }),
-                footer: proto.Message.InteractiveMessage.Footer.create({
-                  text: foot2
-                }),
-                header: proto.Message.InteractiveMessage.Header.create({
-                  hasMediaAttachment: false
-                }),
-                contextInfo: {
-                      mentionedJid: ['94779062397@s.whatsapp.net'], 
-                      forwardingScore: 999,
-                      isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                      newsletterJid: '120363192254044294@newsletter',
-                      newsletterName: 'lara',
-                      serverMessageId: 143
-                    }
-                    }
-              })
-            }
-          }
-        }, {quoted:mek});
-       const sadeeSend = await conn.relayMessage(from, msg.message, {
-          messageId: msg.key.id
-        });
-    console.log('Button Send Sucsses');
+                }
+       })
+    }
+  }
+}, { quoted: mek })
+return await conn.relayMessage(from, msgs.message, {})
           
     } catch (e) {
         console.log(e);
