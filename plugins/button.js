@@ -188,7 +188,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
           let cap = `Test`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
           const mediaMessage = await prepareWAMessageMedia({ image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` } }, { upload: conn.waUploadToServer });
-          push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
               text: cap
             }),
@@ -228,7 +227,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     "buttonParamsJson": `{"display_text":"2","id":"2"}`
                 }
               ]
-            })
           });
         
         let sadee = `LARA - MD`;
