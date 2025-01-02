@@ -251,7 +251,7 @@ let cap = `Title`;
                   hasMediaAttachment: false
                 }),
                 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
-                  cards: push
+                  cards: true
                 }),
                 contextInfo: {
                       mentionedJid: ['94779062397@s.whatsapp.net'], 
