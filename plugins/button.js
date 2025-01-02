@@ -188,7 +188,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 let cap = `Title`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
           const mediaMessage = await prepareWAMessageMedia({ image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` } }, { upload: conn.waUploadToServer });
-          ({
+          push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
               text: cap
             }),
@@ -230,7 +230,9 @@ let cap = `Title`;
               ]
             })
           });
-        
+        let push = [];
+        for (let i = 0; i < length; i++) {
+        let video = [i];
         let sadee = `LARA - MD`;
         let foot2 = `ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
         const msg = generateWAMessageFromContent(from, {
@@ -251,7 +253,7 @@ let cap = `Title`;
                   hasMediaAttachment: false
                 }),
                 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
-                  cards: true
+                  cards: push
                 }),
                 contextInfo: {
                       mentionedJid: ['94779062397@s.whatsapp.net'], 
