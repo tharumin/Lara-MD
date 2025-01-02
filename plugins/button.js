@@ -194,7 +194,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
               "buttonParamsJson": `{\"display_text\":\"🧐\",\"id\":\"\"}`
             }],
           }),
-          let sex = generateWAMessageFromContent(m.chat, {
+let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -226,7 +226,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
           }
         }, {quoted:mek});
           
-return await conn.relayMessage(from, sex.message, {})
+return await conn.relayMessage(from, msgs.message, {})
           
     } catch (e) {
         console.log(e);
