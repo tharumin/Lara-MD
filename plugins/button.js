@@ -187,7 +187,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
  let push = [];
          {       
-let cap = `Title`;
+let cap = `
+*Hi pakayoo*
+*Mama kariyek utto*
+`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
           const mediaMessage = await prepareWAMessageMedia({ image: { url: `https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg` } }, { upload: conn.waUploadToServer });
           push.push({
@@ -219,7 +222,7 @@ let cap = `Title`;
                   },
                   {
                      "name": "cta_url",
-                     "buttonParamsJson": "{\"display_text\":\"WhatsApp 🌷\",\"url\":\"https://whatsapp.com/channel/0029VaD5t8S1nozDfDDjRj2J\",\"merchant_url\":\"https://www.google.com\"}"
+                     "buttonParamsJson": "{\"display_text\":\"WhatsApp 🌸\",\"url\":\"https://whatsapp.com/channel/0029VaD5t8S1nozDfDDjRj2J\",\"merchant_url\":\"https://www.google.com\"}"
                   },
                   {
                     "name": "quick_reply",
@@ -234,7 +237,7 @@ let cap = `Title`;
           });
         }   
         let sadee = `LARA - MD`;
-        let foot2 = `ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
+        let foot2 = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
         const msg = generateWAMessageFromContent(from, {
           viewOnceMessage: {
             message: {
