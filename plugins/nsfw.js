@@ -1,3 +1,6 @@
+const {cmd,commands} = require('../command')
+const {fetchJson} = require('../lib/functions')                           
+
 cmd({
   pattern: 'pussy',
   alias: ["dlpussyb", "pussybdown", "hentaivid"],
