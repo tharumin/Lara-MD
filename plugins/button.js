@@ -187,7 +187,14 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
           let cap = `Test`;
           let foot = `© ᴄʀᴇᴀᴛᴇᴅ ʙʏ ꜱᴀᴅᴇᴇꜱʜᴀ ᴄᴏᴅᴇʀ · · ·`;
-          let msgs = generateWAMessageFromContent(m.chat, {
+        await prepareWAMessageMedia({ image: {url:(`https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`)} }, { upload: conn.waUploadToServer })
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [{
+            "name": "quick_reply",
+              "buttonParamsJson": `{\"display_text\":\"🧐\",\"id\":\"\"}`
+            }],
+          }),
+          let sex = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -203,29 +210,23 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url:(`https://raw.githubusercontent.com/tharumin/Alexa_Voice/refs/heads/main/daenerys%20targaryen.jpeg`)} }, { upload: conn.waUploadToServer })
-          }),
-          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-            buttons: [{
-            "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"🧐\",\"id\":\"\"}`
-            }],
-          }),
-          contextInfo: {
-                  mentionedJid: [m.sender], 
-                  forwardingScore: 999,
-                  isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363192254044294@newsletter',
-                  newsletterName: 'Sadeeesha',
-                  serverMessageId: 143
-                }
-                }
-       })
-    }
-  }
-}, { quoted: mek })
-return await conn.relayMessage(from, msgs.message, {})
+          })
+              contextInfo: {
+                      mentionedJid: ['94779062397@s.whatsapp.net'], 
+                      forwardingScore: 999,
+                      isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                      newsletterJid: '120363192254044294@newsletter',
+                      newsletterName: 'lara',
+                      serverMessageId: 143
+                    }
+                    }
+              })
+            }
+          }
+        }, {quoted:mek});
+          
+return await conn.relayMessage(from, sex.message, {})
           
     } catch (e) {
         console.log(e);
