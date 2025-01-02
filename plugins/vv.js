@@ -18,13 +18,15 @@ const {
     proto
 } = require('@whiskeysockets/baileys')
 const fs = require('fs')
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
+const axios = require('axios')
 const FileType = require('file-type')
 const config = require('../config')
 const {cmd , commands} = require('../command')
 
 cmd({
     pattern: "vv",
-    react: "ℹ",
+    react: "😁",
     alias: ["lassanai","patta","mekada","supiri","maru"],
     desc: "To ViewOnceMessage",
     category: "convert",
