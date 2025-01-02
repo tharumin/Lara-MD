@@ -118,7 +118,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         });
     console.log('Button Send Sucsses');
 
-        const sadeeID = msg.message.mek.id;
+        const sadeeID = msg.message.mek;
         conn.ev.on('messages.upsert', async (messageUpdate) => {
             const mek = messageUpdate.messages[0];
             if (!mek.message) return;
