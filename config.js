@@ -17,4 +17,7 @@ FAKE_RECORDING: process.env.FAKE_RECORDING || "true",
 ANTI_LINK: process.env.ANTI_LINK || "true",
 ANTI_BAD: process.env.ANTI_BAD || "true",   
 READ_MESSAGE: process.env.READ_MESSAGE || "false",
+ANTI_DELETE: process.env.ANTI_DELETE || "true",
+DELETEMSGSENDTO : process.env.DELETEMSGSENDTO === undefined ? '' : process.env.DELETEMSGSENDTO,
+ANTI_DELETE_MAX_SIZE: process.env.ANTI_DELETE_MAX_SIZE || "100",
 };
